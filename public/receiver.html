@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Tesla Screen Receiver</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- Waiting / pairing state -->
+  <div class="wrap" id="waitingView">
+    <div class="panel">
+      <h1>Tesla Screen Receiver</h1>
+      <p class="subtitle" id="statusText">Getting a pairing code…</p>
+
+      <div class="code" id="codeDisplay">— — — —</div>
+
+      <div class="qr-box" id="qrBox" style="display:none;">
+        <img id="qrImg" alt="QR code to open the sender page" />
+      </div>
+
+      <div class="status-line">
+        <span class="dot waiting" id="statusDot"></span>
+        <span id="statusLine">Waiting for iPhone…</span>
+      </div>
+
+      <div id="errorBox" class="error-box" style="display:none;"></div>
+    </div>
+    <footer class="note">
+      On your phone, open <span id="senderUrlText">the sender page</span> and enter the code above, or scan the QR code.
+      Screen sharing is transmitted directly between your devices when supported. This service does not record or
+      permanently store your screen.
+    </footer>
+  </div>
+
+  <!-- Connected / video state -->
+  <div class="video-stage" id="videoStage" style="display:none;">
+    <video id="remoteVideo" autoplay playsinline muted></video>
+    <div class="hud">
+      <span id="hudInfo">Connected · — × — · — fps · — Mbps</span>
+      <button class="btn-danger" id="disconnectBtn">Disconnect</button>
+    </div>
+  </div>
+
+  <script src="/receiver.js"></script>
+</body>
+</html>

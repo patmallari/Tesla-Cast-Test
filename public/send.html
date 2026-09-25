@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Cast to Tesla</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <!-- Step 1: enter code -->
+      <div id="pairStep">
+        <h1>Cast to Tesla</h1>
+        <p class="subtitle">Enter the code shown on your Tesla screen.</p>
+        <input type="tel" inputmode="numeric" maxlength="4" pattern="[0-9]*" id="codeInput" placeholder="0000" autocomplete="off" />
+        <button class="btn-primary" id="connectBtn">Connect</button>
+        <div id="pairError" class="error-box" style="display:none;"></div>
+      </div>
+
+      <!-- Step 2: ready to share -->
+      <div id="shareStep" style="display:none;">
+        <h1>Ready to Share</h1>
+        <p class="subtitle">
+          Tap Start Sharing, then choose this screen/tab when your browser asks what to share.
+        </p>
+        <button class="btn-primary" id="startShareBtn">Start Screen Sharing</button>
+        <p class="hint" id="unsupportedHint" style="display:none;"></p>
+        <div id="shareError" class="error-box" style="display:none;"></div>
+      </div>
+
+      <!-- Step 3: sharing -->
+      <div id="sharingStep" style="display:none;">
+        <h1>Sharing</h1>
+        <div class="status-line" style="justify-content:center; margin-bottom:20px;">
+          <span class="dot connected"></span>
+          <span id="sharingStatus">Connected to Tesla</span>
+        </div>
+        <video id="localPreview" autoplay playsinline muted style="width:100%; border-radius:10px; background:#000;"></video>
+        <button class="btn-danger" id="stopShareBtn" style="margin-top:16px;">Stop Sharing</button>
+      </div>
+
+    </div>
+    <footer class="note">
+      Screen sharing is transmitted directly between your devices when supported. This service does not record or
+      permanently store your screen.
+    </footer>
+  </div>
+
+  <script src="/send.js"></script>
+</body>
+</html>

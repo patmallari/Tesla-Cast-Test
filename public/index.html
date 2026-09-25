@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Tesla Cast</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>Tesla Cast</h1>
+      <p class="subtitle">Self-hosted iPhone → Tesla browser screen sharing over real WebRTC.</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="/receiver" style="text-decoration:none;"><button class="btn-primary">Open Receiver (in the car)</button></a>
+        <a href="/send" style="text-decoration:none;"><button class="btn-secondary">Open Sender (on your phone)</button></a>
+        <a href="/diagnostics" style="text-decoration:none;"><button class="btn-secondary">Diagnostics</button></a>
+      </div>
+    </div>
+    <footer class="note">
+      Open <strong>/receiver</strong> in the Tesla browser, then pair a phone from <strong>/send</strong>.
+      No native app is required on either device. See the README for current iOS Safari limitations.
+    </footer>
+  </div>
+</body>
+</html>
